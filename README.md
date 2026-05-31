@@ -91,7 +91,7 @@ pulse-trend-engine/
 | Windows 10/11 with WSL2 (Ubuntu 24.04) | WSL2 |
 | Docker Desktop | Latest |
 | Python | 3.12 |
-| Java JDK | 11 |
+| Java JDK | 17 |
 | RAM | 16 GB recommended |
 
 ---
