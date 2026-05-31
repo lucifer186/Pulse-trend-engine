@@ -83,17 +83,17 @@ gold_dag         → Manual trigger → runs gold_job.py
 ai_enrichment    → Manual trigger → runs ai_enrichment.py
 
 ## Tech Stack
-Layer               Technology
+Layer          |      Technology
 ------------------------------------
-Ingestion         Python, PRAW, requests \
-Streaming         Apache Kafka, PySpark Structured Stream \
-Storage           Delta Lake, MinIO (S3-compatible) \
-Transform         PySpark, Delta Spark \
-AI Enrichment     Gemini API / OpenAI, Spark UDFs \
-RAG               LangChain, ChromaDB, sentence-transformers \
-Orchestration     Apache Airflow \
-Dashboard         Streamlit, Plotly, Pandas \
-DevOps            Docker Compose, GitHub, pytest \
+Ingestion      |   Python, PRAW, requests \
+Streaming      |   Apache Kafka, PySpark Structured Stream \
+Storage        |   Delta Lake, MinIO (S3-compatible) \
+Transform      |   PySpark, Delta Spark \
+AI Enrichment  |   Gemini API / OpenAI, Spark UDFs \
+RAG            |   LangChain, ChromaDB, sentence-transformers \
+Orchestration  |   Apache Airflow \
+Dashboard      |   Streamlit, Plotly, Pandas \
+DevOps         |   Docker Compose, GitHub, pytest \
 
 ## Data Flow Summary
 APIs → Kafka → Bronze (raw) → Silver (clean)
