@@ -31,60 +31,56 @@ Check docs folder
 ## 📁 Project Structure
 pulse-trend-engine/
 ├── ingestion/
-│   ├── hn_producer.py          # HackerNews → Kafka
-│   ├── news_producer.py        # NewsAPI → Kafka
-│   ├── github_producer.py      # GitHub Trending → Kafka
-│   └── run_all_producers.sh    # Start all 3 producers
+│   ├── hn_producer.py          # HackerNews → Kafka \
+│   ├── news_producer.py        # NewsAPI → Kafka \
+│   ├── github_producer.py      # GitHub Trending → Kafka \
+│   └── run_all_producers.sh    # Start all 3 producers \
 │
 ├── streaming/
-│   └── bronze_stream.py        # Kafka → Delta Lake Bronze
+│   └── bronze_stream.py        # Kafka → Delta Lake Bronze \
 │
 ├── transforms/
-│   ├── silver_job.py           # Bronze → Silver (clean + unified)
-│   ├── silver_transforms.py    # Silver helper functions
-│   ├── gold_job.py             # Silver → Gold (aggregations)
-│   ├── gold_transforms.py      # Gold helper functions
-│   └── ai_enrichment.py        # Gemini UDF enrichment
+│   ├── silver_job.py           # Bronze → Silver (clean + unified) \
+│   ├── silver_transforms.py    # Silver helper functions \
+│   ├── gold_job.py             # Silver → Gold (aggregations) \
+│   ├── gold_transforms.py      # Gold helper functions \
+│   └── ai_enrichment.py        # Gemini UDF enrichment \
 │
 ├── airflow/dags/
-│   ├── silver_dag.py           # Manual trigger Silver DAG
-│   ├── gold_dag.py             # Manual trigger Gold DAG
-│   └── ai_enrichment_dag.py   # Manual trigger AI DAG
+│   ├── silver_dag.py           # Manual trigger Silver DAG \
+│   ├── gold_dag.py             # Manual trigger Gold DAG \
+│   └── ai_enrichment_dag.py   # Manual trigger AI DAG \
 │
 ├── dashboard/
-│   ├── app.py                  # Home page
-│   ├── data_loader.py          # MinIO data reader (local)
-│   ├── data_loader_cloud.py    # CSV reader (cloud deploy)
+│   ├── app.py                  # Home page \
+│   ├── data_loader.py          # MinIO data reader (local) \
 │   └── pages/
-│       ├── 1_Trending_Now.py
-│       ├── 2_Language_Momentum.py
-│       ├── 3_Top_Content.py
-│       └── 4_AI_Assistant.py
+│       ├── 1_Trending_Now.py \
+│       ├── 2_Language_Momentum.py \
+│       ├── 3_Top_Content.py \
+│       └── 4_AI_Assistant.py \
 │
 ├── notebooks/
-│   └── rag_assistant.py        # RAG Q&A CLI + index builder
-│
-├── scripts/
-│   └── export_gold_to_csv.py   # Export Gold → CSV for deploy
+│   └── rag_assistant.py        # RAG Q&A CLI + index builder \
 │
 ├── infra/
-│   └── setup_minio.py          # Create MinIO buckets
+│   └── setup_minio.py          # Create MinIO buckets \
 │
 ├── tests/
-│   ├── test_hn_producer.py
-│   ├── test_news_producer.py
-│   ├── test_github_producer.py
-│   ├── test_silver_transforms.py
-│   └── test_gold_transforms.py
+│   ├── test_hn_producer.py \
+│   ├── test_news_producer.py \
+│   ├── test_github_producer.py \
+│   ├── test_silver_transforms.py \
+│   └── test_gold_transforms.py \
 │
 ├── docs/
-│   └── architecture.md         # Full architecture diagram
+│   └── architecture.md         # Full architecture diagram \
 │
-├── docker-compose.yml          # Kafka, MinIO, Airflow, Zookeeper
-├── start_pulse.sh              # One-command startup script
-├── requirements.txt
-├── .env.example
-└── README.md
+├── docker-compose.yml          # Kafka, MinIO, Airflow, Zookeeper \
+├── start_pulse.sh              # One-command startup script \
+├── requirements.txt \
+├── .env.example \
+└── README.md \
 
 ---
 
