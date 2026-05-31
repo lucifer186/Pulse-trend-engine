@@ -81,14 +81,28 @@ Orchestration (Apache Airflow)
 silver_dag       → Manual trigger → runs silver_job.py
 gold_dag         → Manual trigger → runs gold_job.py
 ai_enrichment    → Manual trigger → runs ai_enrichment.py
-Tech Stack
-LayerTechnologyIngestionPython, PRAW, requestsStreamingApache Kafka, PySpark Structured StreamStorageDelta Lake, MinIO (S3-compatible)TransformPySpark, Delta SparkAI EnrichmentGemini API / OpenAI, Spark UDFsRAGLangChain, ChromaDB, sentence-transformersOrchestrationApache AirflowDashboardStreamlit, Plotly, PandasDevOpsDocker Compose, GitHub, pytestIaCTerraform (local infra)
-Data Flow Summary
+
+## Tech Stack
+Layer               Technology
+------------------------------------
+Ingestion         Python, PRAW, requests
+Streaming         Apache Kafka, PySpark Structured Stream
+Storage           Delta Lake, MinIO (S3-compatible)
+Transform         PySpark, Delta Spark
+AI Enrichment     Gemini API / OpenAI, Spark UDFs
+RAG               LangChain, ChromaDB, sentence-transformers
+Orchestration     Apache Airflow
+Dashboard         Streamlit, Plotly, Pandas
+DevOps            Docker Compose, GitHub, pytest
+
+## Data Flow Summary
 APIs → Kafka → Bronze (raw) → Silver (clean)
      → AI Enrichment → Gold (aggregated)
      → ChromaDB → RAG Assistant
      → Streamlit Dashboard
-Running the Project
+
+
+## Running the Project
 bash# 1. Start infrastructure
 docker compose up -d
 
