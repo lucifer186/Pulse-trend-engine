@@ -106,19 +106,19 @@ APIs → Kafka → Bronze (raw) → Silver (clean)
 bash# 1. Start infrastructure
 docker compose up -d
 
-# 2. Start all producers
+### 2. Start all producers
 bash ingestion/run_all_producers.sh
 
-# 3. Start Bronze streaming
+### 3. Start Bronze streaming
 python streaming/bronze_stream.py
 
-# 4. Run transforms (via Airflow UI or manually)
-python transforms/silver_job.py
-python transforms/gold_job.py
+### 4. Run transforms (via Airflow UI or manually)
+python -m transforms.silver_job.py
+python transforms.gold_job.py
 python transforms/ai_enrichment.py
 
-# 5. Build RAG index
+### 5. Build RAG index
 python notebooks/rag_assistant.py
 
-# 6. Launch dashboard
+### 6. Launch dashboard
 streamlit run dashboard/app.py
