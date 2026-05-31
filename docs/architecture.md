@@ -103,7 +103,7 @@ APIs → Kafka → Bronze (raw) → Silver (clean)
 
 
 ## Running the Project
-bash# 1. Start infrastructure
+### 1. Start infrastructure
 docker compose up -d
 
 ### 2. Start all producers
